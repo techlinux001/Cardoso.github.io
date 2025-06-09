@@ -1,0 +1,130 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000033; /* Fundo azul escuro */
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.message-page {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.gallery {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    height: 400px; /* Altura fixa */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Centraliza e recorta */
+    display: none;
+    border-radius: 15px;
+}
+
+.slide.active {
+    display: block;
+}
+
+.caption {
+    font-size: 16px;
+    color: #fff;
+    margin: 20px 0;
+}
+
+.timer {
+    font-size: 16px;
+    color: #fff;
+    margin: 20px 0;
+}
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #e91e63;
+    transform: scale(1.05);
+}
+
+.top-button {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999; /* Para ficar acima dos corações */
+}
+
+.top-button button {
+    background-color: #ff69b4;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.top-button button:hover {
+    background-color: #e91e63;
+    transform: scale(1.05);
+}
+
+/* Corações brancos animados */
+.heart-white {
+    position: absolute;
+    font-size: 24px;
+    color: #fff;
+    opacity: 0.7;
+    animation: float 6s infinite ease-in-out;
+}
+
+.heart1 { top: 5%; left: 10%; animation-delay: 0s; }
+.heart2 { top: 15%; right: 10%; animation-delay: 1s; }
+.heart3 { top: 30%; left: 20%; animation-delay: 2s; }
+.heart4 { top: 45%; right: 25%; animation-delay: 3s; }
+.heart5 { top: 60%; left: 15%; animation-delay: 4s; }
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-30px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.5; }
+}
